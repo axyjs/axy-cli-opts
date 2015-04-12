@@ -1,0 +1,30 @@
+{
+    "name": "axy-cli-opts",
+    "version": "0.0.1",
+    "description": "Simplest Parser Command Line Arguments",
+    "license": "MIT",
+    "homepage": "https://github.com/axyjs/axy-cli-opts",
+    "author": "Oleg Grigoriev <go.vasac@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/axyjs/axy-cli-opts"
+    },
+    "main": "src/opts.js",
+    "files": [
+        "src/opts.js",
+        "LICENSE"
+    ],
+    "dependencies": {},
+    "keywords": [
+        "cli",
+        "command line"
+    ],
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-typescript": "~0.6.1",
+        "grunt-contrib-nodeunit": "~0.4.1",
+        "grunt-tslint": "2.0.0",
+        "grunt-contrib-jshint": "~0.11.1",
+        "grunt-jsonlint": "~1.0.4"
+    }
+}
