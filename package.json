@@ -1,6 +1,6 @@
 {
     "name": "axy-cli-opts",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Simplest Parser Command Line Arguments",
     "license": "MIT",
     "homepage": "https://github.com/axyjs/axy-cli-opts",
@@ -12,6 +12,7 @@
     "main": "src/opts.js",
     "files": [
         "src/opts.js",
+        "src/opts.d.ts",
         "LICENSE"
     ],
     "dependencies": {},

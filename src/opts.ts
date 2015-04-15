@@ -5,7 +5,7 @@ declare var process: typeof process;
 /**
  * The interface of a single option format
  */
-interface IOptionFormat {
+export interface IOptionFormat {
     /**
      * The short alias. Without "-".
      * For example "x" for "-x"
@@ -59,7 +59,7 @@ interface IOptionFormat {
 /**
  * The interface of the custom filter
  */
-interface IFilter {
+export interface IFilter {
     /**
      * Runs in the option format context
      *
@@ -79,7 +79,7 @@ interface IFilter {
 /**
  * The interface of an options formats list
  */
-interface IFormat {
+export interface IFormat {
     /**
      * the long name => the format
      */
@@ -89,7 +89,7 @@ interface IFormat {
 /**
  * The parsing result interface
  */
-interface IResult {
+export interface IResult {
     /**
      * The arguments list.
      * Components without `-` in the beginning.
@@ -313,10 +313,16 @@ export function help(format: IFormat): string {
             fOption = format[k];
             name = "--" + k;
             if (fOption.descriptionVal) {
-                name += "=" + fOption.descriptionVal;
+                if (fOption.flag) {
+                    name += "=[" + fOption.descriptionVal + "]";
+                } else {
+                    name += "=" + fOption.descriptionVal;
+                }
             }
             if (fOption.short) {
                 name = "-" + fOption.short + ", " + name;
+            } else {
+                name = "    " + name;
             }
             max = Math.max(max, name.length);
             opts.push({

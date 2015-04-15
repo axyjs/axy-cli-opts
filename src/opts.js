@@ -199,10 +199,18 @@ function help(format) {
             fOption = format[k];
             name = "--" + k;
             if (fOption.descriptionVal) {
-                name += "=" + fOption.descriptionVal;
+                if (fOption.flag) {
+                    name += "=[" + fOption.descriptionVal + "]";
+                }
+                else {
+                    name += "=" + fOption.descriptionVal;
+                }
             }
             if (fOption.short) {
                 name = "-" + fOption.short + ", " + name;
+            }
+            else {
+                name = "    " + name;
             }
             max = Math.max(max, name.length);
             opts.push({
