@@ -7,7 +7,6 @@ module.exports = function (grunt) {
         typescript: {
             source: {
                 options: {
-                    declaration: true,
                     removeComments: false,
                     target: "ES5",
                     module: "commonjs"
